@@ -8,6 +8,6 @@ resource "aws_instance" "Demo2" {
  }
 provider "aws" {
   region = "ap-south-1"
-  access_key = "AKIA3FFXXT4SBLGX7YUH"
-  secret_key = "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"
+  access_key = "AKIA3FFXXT4SISWQPGEU"
+  secret_key = "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"
 }
