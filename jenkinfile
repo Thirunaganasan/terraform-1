@@ -1,20 +1,21 @@
-    pipeline {
+/* Hello World in Groovy */
+ pipeline {
 
-    agent any
+            agent any
 
-    stages {
+              stages {
 
-    stage(‘Checkout’) {
+                stage("Checkout") {
 
-    steps {
+                  steps {
 
-    checkout([$class: ‘GitSCM’, branches: [[name: ‘*/main’]], extensions: [], userRemoteConfigs: [[url: ‘https://github.com/RajashankarR/terraform.git‘]]])
+    checkout([$class: "GitSCM", branches: [[name: "*/main"]], extensions: [], userRemoteConfigs: [[url: "https://github.com/RajashankarR/terraform.git"]]])
 
     }
 
     }
 
-    stage (“terraform_init”) {
+    stage ('terraform_init') {
 
     steps {
 
@@ -23,12 +24,8 @@
     }
 
     }
-
-    stage (“terraform Action”) {
-
+    stage ('terraform_Action') {
     steps {
-
-     
 
     sh "terraform apply –auto-approve"
 
