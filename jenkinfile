@@ -7,16 +7,20 @@
     stage ('terraform_init') {
 
     steps {
-
-    sh "terraform init"
+    cmd_exec('terraform init -input=false')
+    
 
     }
 
     }
     stage ('terraform_Action') {
     steps {
+    
+     cmd_exec('terraform plan -input=false -out tfplan')
 
-    sh "terraform apply –auto-approve"
+     cmd_exec('terraform apply -input=false tfplan')
+    
+    
 
     }
 
