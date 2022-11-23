@@ -24,7 +24,7 @@
 
     }
 
-    stage “terraform Action” {
+    stage (“terraform Action”) {
 
     steps {
 
