@@ -27,9 +27,7 @@
     stage “terraform Action” {
 
     steps {
-
-     
-
+ 
     sh "terraform apply –auto-approve"
 
     }
