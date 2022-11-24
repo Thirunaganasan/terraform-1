@@ -1,4 +1,4 @@
- pipeline {
+pipeline {
 
             agent any
 
@@ -7,25 +7,22 @@
     stage ('terraform_init') {
 
     steps {
-    cmd_exec('terraform init -input=false')
-    
+
+    sh 'terraform init -input=false'
 
     }
 
     }
     stage ('terraform_Action') {
     steps {
-    
-     cmd_exec('terraform plan -input=false -out tfplan')
 
-     cmd_exec('terraform apply -input=false tfplan')
-    
-    
+    sh "terraform plan -input=false -out tfplan"
+    sh "terraform apply -input=false tfplan"
 
     }
-    def cmd_exec(command) {
-    return bat(returnStdout: true, script: "${command}").trim()
+
     }
+    
     }
 
     }
